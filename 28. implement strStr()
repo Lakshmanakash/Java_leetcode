@@ -1,0 +1,23 @@
+//substring in string
+//Input: haystack = "hello", needle = "ll"
+//Output: 2
+
+class Solution {
+    public int strStr(String haystack, String needle) {
+       if(needle.length()<=0) return -1;
+//      return(haystack.indexOf(needle));
+        
+        int lenh=haystack.length(),lenn=needle.length();
+        for(int i=0;i<=lenh-lenn;i++){
+            int j;
+            for(j=0;j<lenn;j++){
+                if(haystack.charAt(j+i)!=needle.charAt(j)) break;
+            }
+            if(j==lenn){
+                return i;
+            }
+        }
+        return -1;
+        
+    }
+}

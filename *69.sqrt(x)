@@ -1,0 +1,18 @@
+//Input: x = 8
+//Output: 2
+//Explanation: The square root of 8 is 2.82842..., and since the decimal part is truncated, 2 is returned.
+
+//Input: x = 4
+//Output: 2
+
+class Solution {
+    public int mySqrt(int x) {
+        int l=1,r=x;
+        while(l<r){
+            int mid=l+(r-l)/2;
+            if(mid<x/mid) l=mid+1;
+            else r=mid;
+        }
+        return (l==x/l)?l:l-1;   
+    }
+}
